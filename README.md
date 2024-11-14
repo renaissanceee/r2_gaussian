@@ -2,34 +2,27 @@
 
 <div align="center">
 
-<p align="center"> <img src="assets/logo.png" width="250px"> </p>
-
 [Arxiv](https://arxiv.org/abs/2405.20693) | [Data](https://drive.google.com/drive/folders/1YZ3w87XrCNyjDRos6gkY8zgT5hESl-PN?usp=sharing) | [Models](https://drive.google.com/drive/folders/1HIvO7aS2gbp7Qx3ceHiRSNoAKKS_VnjU?usp=sharing) | [Project](https://ruyi-zha.github.io/r2_gaussian/r2_gaussian.html)
 
 <h2> Rectifying Radiative Gaussian Splatting for Tomographic Reconstruction </h2> 
 
 *Fast and direct CT reconstruction with 3D Gaussian Splatting.*
 
-
-![cover](assets/cover.png)
-
-![demo](assets/demo.gif)
-
 </div>
 
-
+```sh
+# init_pcd(already donee)
+python initialize_pcd.py --data synthetic_dataset/cone_ntrain_50_angle_360/0_chest_cone
+# train
+python train.py -s synthetic_dataset/cone_ntrain_50_angle_360/0_chest_cone -m benchmark_synthetic/cone_ntrain_50_angle_360/0_chest_cone --eval
+# test
+python test.py -m benchmark_synthetic/cone_ntrain_50_angle_360/0_chest_cone --skip_render_train
+└── output
+│   ├── point_cloud                 -->pickle, npy
+│   ├── render_test                 -->projections:rasterizer(100 test_views)
+│   ├── reconstruction              -->volume: voxelizer(250 grids)
+```
 &nbsp;
-
-
-### Introduction
-
-This is the official repo of our NeurIPS 2024 paper [R<sup>2</sup>-Gaussian: Rectifying Radiative Gaussian Splatting for Tomographic Reconstruction](https://arxiv.org/abs/2405.20693). If you find this repo useful, please give it a star ⭐ and consider citing our paper.
-
-### News
-
-* 2024.10.25: Code, data, and models have been released. Welcome to have a try!
-* 2024.09.27: Our work has been accepted to NeurIPS 2024.
-* 2024.05.31: Our paper is available on [arxiv](https://arxiv.org/abs/2405.20693).
 
 ## 1. Installation
 
