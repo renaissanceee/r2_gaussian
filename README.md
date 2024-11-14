@@ -17,10 +17,11 @@ python initialize_pcd.py --data synthetic_dataset/cone_ntrain_50_angle_360/0_che
 python train.py -s synthetic_dataset/cone_ntrain_50_angle_360/0_chest_cone -m benchmark_synthetic/cone_ntrain_50_angle_360/0_chest_cone --eval
 # test
 python test.py -m benchmark_synthetic/cone_ntrain_50_angle_360/0_chest_cone --skip_render_train
-└── output
-│   ├── point_cloud                 -->pickle, npy
-│   ├── render_test                 -->projections:rasterizer(100 test_views)
-│   ├── reconstruction              -->volume: voxelizer(250 grids)
+└── test
+│   ├── iter_30000
+│   │   ├── point_cloud            --> pickle, npy
+│   │   ├── render_test            --> projections:rasterizer(100 test_views)
+│   │   ├── reconstruction         --> volume: voxelizer(250 grids)
 ```
 &nbsp;
 
